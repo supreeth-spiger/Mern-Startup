@@ -16,12 +16,12 @@ app.use(
 app.use(bodyParser.json());
 
 // DB Config
-const db = require("./config/keys").mongoURI;
+const dbURL = require("./config/keys");
 
 // Connect to MongoDB
 mongoose
   .connect(
-    db,
+    dbURL,
     { useNewUrlParser: true }
   )
   .then(() => console.log("MongoDB successfully connected"))
